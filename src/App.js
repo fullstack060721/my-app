@@ -7,11 +7,11 @@ class App extends Component {
     <div className="App">
       <header className="App-header">
       <p>Hello world!</p>
-      <Car brand="Honda" model="Civic" color="Black"></Car>
+      <Car brand="Honda" model="Civic" color="Black" />
       <hr />
-      <Car brand="Toyota" model="Kamry" color="White"></Car>
+      <Car brand="Toyota" model="Kamry" color="White" />
       <hr />
-      <Car brand="Ferrari" model="Testa rocca" color="Red"></Car>
+      <Car brand="Ferrari" model="Testa rocca" color="Red" />
       </header>
     </div>
     );
