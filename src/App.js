@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import Car from './components/Car'
 
 class App extends Component {
   render() {
@@ -8,6 +7,10 @@ class App extends Component {
     <div className="App">
       <header className="App-header">
       <p>Hello world!</p>
+      <Car ></Car>
+      <hr />
+      <Car ></Car>
+      <hr />
       </header>
     </div>
     );
