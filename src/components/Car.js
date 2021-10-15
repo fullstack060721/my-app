@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 
 class Car extends Component {
   render() {
+    // <Car brand="Toyota" model="Kamry" color="White"></Car>
+    console.log(this.props)
+    const { brand, model, color } = this.props
+    //const brand = this.props.brand x3
   return (
     <div >
-      <p>Brand: Honda</p>
-      <p>Model: Civic</p>
-      <p>Color: Black</p>
+      <p>Brand: {brand}</p>
+      <p>Model: {model}</p>
+      <p>Color: {color}</p>
     </div>
     );
   }
