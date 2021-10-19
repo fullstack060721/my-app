@@ -20,14 +20,20 @@ class App extends Component {
             my_cars: new_arr
         }
     )
-}
+  }
+  deleteCar = (_id) => {
+    const new_cars = this.state.my_cars.filter(car => car.id !== _id)
+    this.setState({
+      my_cars : new_cars
+    })
+  }
   render() {
   return (
-    <div className="App">
+    <div className="App" style={{marginLeft: 10}}>
       <header className="App-header">
       <p>Garage!</p>
       <hr />
-      <Garage cars={this.state.my_cars} />
+      <Garage cars={this.state.my_cars} delete_car={this.deleteCar} />
       <AddCar addCar = {this.addCar} />
       </header>
     </div>
