@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Garage extends Component {
   render() {
-    // <Car brand="Toyota" model="Kamry" color="White"></Car>
     console.log(this.props)
     const { cars } = this.props
     //const cars = this.props.cars
