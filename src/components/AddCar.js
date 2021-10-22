@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
+import ComponentOne from './ComponentOne';
 
 class AddCar extends Component {
     state = {
         fake_property: 3,
+        display: true,
         new_car: {
             brand: null, 
             color: null, 
             year: null,
             model: null }
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('garage componentDidUpdate')
+        console.log('garage prevState')
+        console.log(prevState)
+        console.log('garage prevProps')
+        console.log(prevProps)
+      }
+
     handleChange = (e) => {
         /*
         if (e.target.id == "brand")
@@ -32,6 +43,10 @@ class AddCar extends Component {
         console.log(this.state.new_car)
     }
     render() {   
+        let comp;
+        if (this.state.display) {
+            comp = <ComponentOne />;
+        }
         return (
             <div >
                 <form onSubmit={this.handleSubmit}>
@@ -43,8 +58,11 @@ class AddCar extends Component {
                     <input type="text" id="color" onChange={this.handleChange} />
                     <label htmlFor="Year">Year:</label>
                     <input type="number" id="year" onChange={this.handleChange} />
-                    <button>Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
+                <br />
+                <button onClick={() => {this.setState({ display: !this.state.display})}}>Delete</button>
+                {comp}                
             </div>
             );
     }

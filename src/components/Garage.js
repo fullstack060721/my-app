@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class Garage extends Component {
+    shouldComponentUpdate (nextProps) {
+        console.log('===================')
+        return nextProps.cars.length != 0
+    }
+
   render() {
     console.log(this.props)
     const { cars } = this.props

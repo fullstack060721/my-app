@@ -4,8 +4,66 @@ import Garage from './components/Garage'
 import AddCar from './components/AddCar';
 
 class App extends Component {
+
+  componentDidMount() {
+    console.log('mount')
+  }
+
+  constructor() {
+    super()
+    console.log('ctor')
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('getDerivedStateFromProps')
+    //if(props.name !== state.name){
+        //Change in props
+      //  return{
+            //name: props.name
+        //};
+    //}
+    console.log('&&&&&&&&&&&&&&&&&&&&&&')
+    console.log(props)
+    console.log('&&&&&&&&&&&&&&&&&&&&&&')
+    console.log(state)
+    console.log('&&&&&&&&&&&&&&&&&&&&&&')
+    //return {_time : new Date(), x: state.x + 1};
+    if (state.my_cars.length == 0) {
+      console.log('000000000000000000000000')
+      return { z:3, my_cars : [{brand: "HAMMER", model: "DEMO", color: "DEMO", year: 2018, id: 10}]}
+    }
+    return null;
+    /*
+    if (state != undefined)
+    {
+        if (state.x > 40)
+          return null; // No change to state
+        else
+          return this.state;
+      }
+    */
+}
+/* if props changes then after getDerivedStateFromProps
+   method, state will look something like 
+
+{
+    name: props.name
+}
+*/
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('======== -----------')
+    console.log(this.state.x)
+    console.log('componentDidUpdate')
+    console.log(prevState)
+    console.log(prevProps)
+    // will create a loop error!
+     //this.setState({x : this.state.x+1})
+  }
+
   static my_car_seq = 4;
   state = {
+    x : 1,
     my_cars: [
       {brand: "Honda", model: "Civic", color: "Black", year: 2018, id: 1}, 
       {brand: "Toyota", model: "Kamry", color: "White", year: 2019, id: 2}, 
