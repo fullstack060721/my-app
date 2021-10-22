@@ -36,6 +36,7 @@ class AddCar extends Component {
             <div >
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="brand">Brand:</label>
+                    
                     <input type="text" id="brand" onChange={this.handleChange} required />
                     <label htmlFor="Model">Model:</label>
                     <input type="text" id="model" onChange={this.handleChange} />
@@ -43,6 +44,10 @@ class AddCar extends Component {
                     <input type="text" id="color" onChange={this.handleChange} />
                     <label htmlFor="Year">Year:</label>
                     <input type="number" id="year" onChange={this.handleChange} />
+                    <div className="input-field col s6">
+                        <input id="input_text" type="text" data-length="10" />
+                        <label forHtml="input_text">Input text</label>
+                    </div>
                     <button>Submit</button>
                 </form>
             </div>

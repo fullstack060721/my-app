@@ -33,7 +33,7 @@ class App extends Component {
       <header className="App-header">
       <p>Garage!</p>
       <hr />
-      <Garage cars={this.state.my_cars} delete_car={this.deleteCar} />
+      <Garage cars={this.state.my_cars} delete_car={this.deleteCar} /> 
       <AddCar addCar = {this.addCar} />
       </header>
     </div>
