@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RainBow from '../hoc/Rainbow.js';
 
 class Garage extends Component {
   render() {
@@ -25,4 +26,4 @@ class Garage extends Component {
   }
 }
 
-export default Garage;
+export default RainBow(Garage);
