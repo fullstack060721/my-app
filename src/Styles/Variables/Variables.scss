@@ -1,0 +1,9 @@
+$blueColor: rgb(55, 165, 255);
+
+$fonts: Helvetica, Times, Serif;
+
+@mixin demoNavbarStyle($width, $height, $backColor) {
+	width: $width;
+	height: $height;
+	background-color: $blueColor;
+}

@@ -1,0 +1,21 @@
+@import "../Styles/Variables/Variables.scss";
+
+.demoNavbar {
+	@include demoNavbarStyle(100%, 80px, $blueColor);
+	background-color: $blueColor;
+
+	a {
+		font-family: $fonts;
+	}
+}
+
+.linkBasic {
+	padding: 15px 30px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.linkHome {
+	@extend .linkBasic;
+	color: lighten($blueColor,10);
+}
