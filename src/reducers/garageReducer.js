@@ -3,7 +3,8 @@ const init_state = {
         {brand: "Honda", model: "Civic", color: "Black", year: 2018, id: 1}, 
         {brand: "Toyota", model: "Kamry", color: "White", year: 2019, id: 2}, 
         {brand: "Ferrari", model: "Testa rocca", color: "Red", year: 2020, id: 3} 
-      ]
+      ],
+    my_car_seq: 4
 }
 
 const garageReducer = (reducer_state = init_state, action) => {
@@ -17,6 +18,15 @@ const garageReducer = (reducer_state = init_state, action) => {
           ...reducer_state,
           my_cars : new_cars
         }   
+    }
+    else if (action.type == 'ADD_CAR') {
+        const new_arr = [...reducer_state.my_cars]
+        new_arr.push({...action.new_car, id: reducer_state.my_car_seq++})
+        console.log(new_arr)
+        return  {
+                ...reducer_state,
+                my_cars: new_arr
+            }
     }
     return reducer_state;
 }
