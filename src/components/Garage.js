@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Garage extends Component {
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     const { cars } = this.props
     //const cars = this.props.cars
 
